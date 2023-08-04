@@ -170,5 +170,5 @@ def end_event(event_name):
         add_event(start_time, end_time, summary, description)
         timers_df = timers_df.drop(event_row.name)
         timers_df.to_csv(PYGCAL_PATH + "timers.csv", index=False)
-    except Exception:
+    except IndexError:
         print(f"Error: No event with name {event_name} could be found.")
